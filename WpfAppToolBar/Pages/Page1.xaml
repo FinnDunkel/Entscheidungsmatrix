@@ -1,0 +1,44 @@
+﻿<Page x:Class="WpfAppToolBar.Pages.Page1"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfAppToolBar.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Page1">
+
+    <Grid Background="#FFF5F5F5">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200" />
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        
+        <!--Beschreibung der Textinhalte und Angaben des Benutzers-->
+
+             <StackPanel Grid.Column="0" >
+                 <Label HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="14" Content="Allgemeine Informationen" FontWeight="Bold">
+                 </Label>
+
+                 <Label Content="Bauvorhaben:"/>
+                 <Label Content="Vorgangsnummer:"/>
+                 <Label FontSize="14" FontWeight="Bold" Content="Bauteil"/>
+                 <Label Content="Bauteilart:" />
+
+            <!--Textinhalte und Angaben des Benutzers-->
+                 
+             </StackPanel>
+
+             <StackPanel Grid.Column="1">
+                <TextBox x:Name="Bauvorhaben" Margin="0,37,20,0" />
+                <TextBox x:Name="Vorgangsnummer" Margin="0,5,20,0" />
+                <ComboBox x:Name="Bauteilart" Margin="0,37,20,0">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Name}"/>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ComboBox>
+             </StackPanel>
+    </Grid>
+</Page>
